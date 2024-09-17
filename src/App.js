@@ -1,18 +1,13 @@
-import Thank from "./Thank.js";
-import Form from "./Form.js";
+import Main from "./components/Main.js";
 export default function App() {
   return (
     <div className="container">
       <nav>
         <div className="front-card"></div>
-
         <div className="back-card"></div>
       </nav>
 
-      <main>
-        <Form />
-        <Thank />
-      </main>
+      <Main />
     </div>
   );
 }

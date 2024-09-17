@@ -32,6 +32,7 @@ nav {
   background: url("/public/images/bg-main-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
 }
 
 .front-card {
