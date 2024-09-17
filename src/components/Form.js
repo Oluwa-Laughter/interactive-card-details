@@ -1,6 +1,11 @@
+import { Routes, Route } from "react-router";
+import Thank from "./Thank.js";
+
 export default function Form() {
+  const handleSubmit = function () {};
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={() => handleSubmit()}>
       <section className="form-section">
         <label htmlFor="card-name">Cardholder Name</label>
         <input
@@ -54,6 +59,9 @@ export default function Form() {
       </section>
 
       <button type="submit">confirm</button>
+      <Routes>
+        <Route path="/thank" element={<Thank />} />
+      </Routes>
     </form>
   );
 }
