@@ -17,46 +17,124 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--light-grayish-violet);
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   height: 100vh;
   max-width: 144rem;
   margin: 0 auto;
-  gap: 8.6rem;
+  gap: 6rem;
+  background-color: var(--white);
+
+  nav {
+    background: url("/public/images/bg-main-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 45rem;
+  }
+
+  main {
+    margin: auto 10rem;
+    padding: 10rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-nav {
-  flex: 40%;
-  background: url("/public/images/bg-main-desktop.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-}
+.card-container {
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: auto;
+    justify-content: space-between;
+    padding: 2rem;
 
-.front-card {
-  background: url("/public/images/bg-card-front.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 44.7rem;
-  height: 24.5rem;
-}
+    img {
+      width: 8rem;
+    }
 
-.back-card {
-  background: url("/public/images/bg-card-back.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 44.7rem;
-  height: 24.5rem;
-}
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      h1 {
+        color: var(--white);
+        font-size: 3rem;
+        font-weight: 900;
+        width: 100%;
+        letter-spacing: 0.5rem;
+        height: 3.2rem;
+      }
+      .owner {
+        display: flex;
+        height: 2.5rem;
+        justify-content: space-between;
 
-main {
-  flex: 60%;
-  margin: auto 10rem;
-  padding: 7.8rem;
-  align-items: center;
-  justify-content: center;
+        h2 {
+          color: var(--white);
+          text-transform: capitalize;
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+        }
+
+        .card-date {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--white);
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+  }
+
+  .front-card {
+    background: url("/public/images/bg-card-front.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 44.7rem;
+    height: 24.5rem;
+    position: absolute;
+    border-radius: 1.5rem;
+    top: 15%;
+    left: 15%;
+  }
+
+  .back-card {
+    background: url("/public/images/bg-card-back.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 44.7rem;
+    height: 24.5rem;
+    position: absolute;
+    border-radius: 1.5rem;
+    top: 45%;
+    left: 40%;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .card-cvc {
+      height: 3rem;
+      font-size: 2rem;
+      margin-right: 2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+  }
 }
 
 form {
@@ -136,4 +214,34 @@ button {
   padding: 1rem;
   cursor: pointer;
   text-transform: capitalize;
+}
+
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 40rem;
+  padding: 2rem;
+
+  img {
+    width: 7rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--very-dark-violet);
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: var(--dark-grayish-violet);
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
 }
