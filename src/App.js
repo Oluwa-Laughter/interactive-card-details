@@ -20,6 +20,7 @@ export default function App() {
   };
   const handleSubmit = function (e) {
     e.preventDefault();
+    setCompleted(true);
   };
 
   return (
@@ -118,6 +119,7 @@ function Form({ formData, handleChange, handleSubmit, setCompleted }) {
           <label htmlFor="card-cvc">CVC</label>
           <input
             type="tel"
+            className="card_cvc"
             id="card-cvc"
             name="cardCvc"
             value={formData.cardCvc}

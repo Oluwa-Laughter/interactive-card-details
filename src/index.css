@@ -18,13 +18,14 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--light-grayish-violet);
+  overflow-x: hidden;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 100vh;
   max-width: 144rem;
+  height: 100vh;
   margin: 0 auto;
   gap: 6rem;
   background-color: var(--white);
@@ -42,10 +43,6 @@ body {
     padding: 10rem;
     align-items: center;
     justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -71,7 +68,6 @@ body {
         font-size: 3rem;
         font-weight: 900;
         width: 100%;
-        letter-spacing: 0.5rem;
         height: 3.2rem;
       }
       .owner {
@@ -84,7 +80,6 @@ body {
           text-transform: capitalize;
           font-size: 2rem;
           font-weight: 700;
-          letter-spacing: -0.5px;
         }
 
         .card-date {
@@ -140,8 +135,8 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  max-width: 40rem;
-  gap: 2rem;
+  width: 100%;
+  gap: 3rem;
 }
 
 .form-section {
@@ -158,7 +153,8 @@ label {
 }
 
 input {
-  height: 4rem;
+  height: 5rem;
+  font-size: 1.4rem;
   border-radius: 10px;
   border: 0.5px solid var(--light-grayish-violet);
   padding: 0.5rem 1rem;
@@ -207,7 +203,7 @@ input.error {
 button {
   background: var(--very-dark-violet);
   color: var(--white);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   border: none;
   border-radius: 10px;
@@ -229,19 +225,150 @@ button {
   }
 
   h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--very-dark-violet);
     text-transform: uppercase;
   }
 
   p {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--dark-grayish-violet);
     text-align: center;
   }
 
   button {
     width: 100%;
+    font-family: 1.6rem;
+  }
+}
+
+@media (max-width: 64em) {
+  body {
+    background: none;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .container nav {
+    width: 100%;
+    background: url("/public/images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    flex-wrap: nowrap;
+    height: 35vh;
+  }
+
+  .container main {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .card-container .front-card,
+  .card-container .back-card {
+    width: 50rem;
+    height: 25rem;
+  }
+
+  form {
+    width: 100%;
+    gap: 4rem;
+  }
+
+  .card-exp {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .card-container .back-card {
+    top: 3rem;
+    left: 10rem;
+
+    p {
+      padding: 1rem;
+    }
+  }
+
+  .card_cvc {
+    width: 10rem;
+  }
+
+  .card-container .front-card {
+    top: 20rem;
+    left: 25rem;
+    z-index: 999;
+
+    p {
+      padding: 1rem;
+    }
+  }
+}
+
+@media (max-width: 34em) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  .container {
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .container nav {
+    background: url("/public/images/bg-main-mobile.png");
+    padding: 1rem;
+    height: 40vh;
+  }
+
+  .card-container .front-card,
+  .card-container .back-card {
+    width: 80%;
+    height: 18rem;
+  }
+
+  body {
+    background: none;
+  }
+  .container main {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .card-container .back-card {
+    top: 1rem;
+    left: 1rem;
+    padding: 1rem;
+  }
+
+  .card-container .front-card {
+    top: 12rem;
+    left: 6rem;
+    z-index: 999;
+
+    p {
+      padding: 1rem;
+    }
+  }
+
+  form,
+  .thank-you {
+    max-width: 100%;
+    padding: 1rem;
+    gap: 2.4rem;
+    justify-content: space-between;
+
+    img {
+      width: 5rem;
+    }
+  }
+
+  .card_cvc {
+    width: 10rem;
+  }
+  .thank-you {
+    padding: 1rem;
   }
 }
