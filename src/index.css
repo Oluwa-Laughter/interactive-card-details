@@ -168,6 +168,12 @@ input.error {
   border: 1px solid hsl(0, 100%, 66%);
 }
 
+.error-message {
+  color: hsl(0, 100%, 66%);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .card-exp {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
@@ -182,12 +188,18 @@ input.error {
 
 .exp-month span {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .exp-month span input {
+  flex: 1 0 calc(50% - 0.5rem);
   height: 4rem;
-  width: 8rem;
+  min-width: 8rem;
+}
+
+.exp-month span p {
+  flex-basis: 100%;
 }
 
 .cvc {
@@ -340,7 +352,13 @@ button {
   .card-container .back-card {
     top: 1rem;
     left: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
+
+    p {
+      font-size: 1.4rem;
+      padding: 0.2rem;
+      align-self: center;
+    }
   }
 
   .card-container .front-card {
@@ -364,7 +382,6 @@ button {
       width: 5rem;
     }
   }
-
   .card_cvc {
     width: 10rem;
   }
