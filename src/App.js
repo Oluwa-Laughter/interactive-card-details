@@ -92,19 +92,23 @@ export default function App() {
           <div className="card-details">
             <img src="./images/card-logo.svg" alt="card-logo" />
             <div className="card-info">
-              <h1 className="card-num ">{formData.cardNumber}</h1>
+              <h1 className="card-num ">
+                {formData.cardNumber || "0000 0000 0000 0000"}
+              </h1>
               <div className="owner">
-                <h2 className="card-name">{formData.cardName}</h2>
+                <h2 className="card-name">
+                  {formData.cardName || "Jane Appleseed"}
+                </h2>
                 <div className="card-date">
-                  <span>{formData.cardExpiryMonth}</span> /{" "}
-                  <span>{formData.cardExpiryYear}</span>
+                  <span>{formData.cardExpiryMonth || "00"}</span> /
+                  <span>{formData.cardExpiryYear || "00"}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="back-card">
-          <p className="card-cvc">{formData.cardCvc}</p>
+          <p className="card-cvc">{formData.cardCvc || "123"}</p>
         </div>
       </nav>
 
